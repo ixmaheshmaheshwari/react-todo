@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5173/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+  <script type="module" src="./To-Do List_files/client"></script>
+
+  
+  <link rel="icon" type="image/png" href="http://localhost:5173/src/todo.png">
+  <link href="./To-Do List_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="./To-Do List_files/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+<style type="text/css" data-vite-dev-id="/Users/mahesh/training/react-todo/src/components/Todo.css">
+
+.todo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+  }
+  
+  .todo-content {
+    width: 70%;
+  }
+  
+  .todo-sidebar {
+    width: 30%;
+    padding: 20px;
+  }
+  
+  .todo-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .todo-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .todo-card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .todo-card-body {
+    padding: 10px;
+  }
+  
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .todo-item-title {
+    flex-grow: 1;
+  }
+  
+  .todo-item-buttons button {
+    margin-left: 5px;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+  .page-btn {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .page-btn.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .pagination > li {
+    list-style: none;
+    border: 0.3px solid;
+  }
+  .pagination > li > a,
+  .pagination > li > span {
+    float: left;
+    padding: 8px 20px;
+    line-height: 1.5;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+  }
+  
+  .pagination > li.active > a {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  .pagination > li > a:hover {
+    background-color: #218838;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .pagination > li:first-child > a, .pagination > li:first-child > span {
+    margin-left: 0;
+    height: 11vh;
+    width: 34vh;
+}
+.page-item:last-child .page-link {
+    height: 11vh;
+    width: 34vh;
+}</style><style type="text/css" data-vite-dev-id="/Users/mahesh/training/react-todo/src/index.css">:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+</style></head>
+
+<body>
+  <div id="root"><div class="todo-container"><div class="todo-content"><h3 class="todo-header">Incomplete Tasks</h3><div class="todo-card"><div class="todo-card-header">delectus aut autem</div><div class="todo-card-body"><button class="btn btn-danger">Delete</button><button class="btn btn-primary">Update</button></div></div><div class="todo-card"><div class="todo-card-header">quis ut nam facilis et officia qui</div><div class="todo-card-body"><button class="btn btn-danger">Delete</button><button class="btn btn-primary">Update</button></div></div><div class="todo-card"><div class="todo-card-header">fugiat veniam minus</div><div class="todo-card-body"><button class="btn btn-danger">Delete</button><button class="btn btn-primary">Update</button></div></div><div class="todo-card"><div class="todo-card-header">laboriosam mollitia et enim quasi adipisci quia provident illum</div><div class="todo-card-body"><button class="btn btn-danger">Delete</button><button class="btn btn-primary">Update</button></div></div><h3 class="todo-header">Completed Tasks</h3><div class="todo-card"><div class="todo-card-header">et porro tempora</div><div class="todo-card-body"><button class="btn btn-danger">Delete</button><button class="btn btn-primary">Update</button></div></div><div class="pagination"><ul class="pagination" role="navigation" aria-label="Pagination"><li class="page-item disabled"><a class="page-link " tabindex="-1" role="button" aria-disabled="true" aria-label="Previous page" rel="prev">&lt; Previous</a></li><li class="page-item active"><a rel="canonical" role="button" class="page-link" tabindex="-1" aria-label="Page 1 is your current page" aria-current="page">1</a></li><li class="page-item"><a rel="next" role="button" class="page-link" tabindex="0" aria-label="Page 2">2</a></li><li class="page-item"><a role="button" class="page-link" tabindex="0" aria-label="Page 3">3</a></li><li class="page-item"><a role="button" class="page-link" tabindex="0" aria-label="Page 4">4</a></li><li class="page-item"><a role="button" class="page-link" tabindex="0" aria-label="Page 5">5</a></li><li class="page-item"><a class="page-link" role="button" tabindex="0" aria-label="Jump forward">...</a></li><li class="page-item"><a role="button" class="page-link" tabindex="0" aria-label="Page 38">38</a></li><li class="page-item"><a role="button" class="page-link" tabindex="0" aria-label="Page 39">39</a></li><li class="page-item"><a role="button" class="page-link" tabindex="0" aria-label="Page 40">40</a></li><li class="page-item"><a class="page-link" tabindex="0" role="button" aria-disabled="false" aria-label="Next page" rel="next">Next &gt;</a></li></ul></div></div><div class="todo-sidebar"><h3 class="todo-header">Add New Todo</h3><div class="todo-form"><div class="form-group"><input type="text" class="form-control" placeholder="Enter new todo"></div><button class="btn btn-success">Add Todo</button></div></div></div></div>
+  <script type="module" src="./To-Do List_files/main.jsx"></script>
+
+
+</body></html>
