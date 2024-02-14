@@ -61,7 +61,7 @@ const Navbar = ({ onTodoCreated }) => {
     <>
     <div className='header'>
         <div className='img'>
-        <img src="./src/components/icons8-todo-list.gif"  className='image'></img>
+        <img src="../src/components/icons8-todo-list.gif"  className='image'></img>
     <h2>To-Do Tasks</h2>
         </div>
 <div>
