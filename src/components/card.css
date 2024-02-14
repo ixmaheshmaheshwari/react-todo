@@ -1,0 +1,61 @@
+.ant-space-item {
+    margin-left: 10px;
+    background-color: antiquewhite;
+    border-radius: 19px;
+}
+.ant-btn-link:hover {
+    border: none; /* Remove border on hover */
+  }
+ #card-body{
+    display:flex ;
+ }
+ .ant-card-body{
+    height: 8pc;
+ }
+ .title{
+    width:10rem
+ }
+ .edit{
+    width: 10%;
+    position: absolute;
+    margin-left: 16pc;
+    margin-top: 0pc;
+    cursor: pointer;
+ }
+ .delete {
+    margin-left: -164px;
+    /* position: absolute; */
+    margin-top: 2.5pc;
+    cursor: pointer;
+    width: 10%;
+    position: absolute;
+    margin-left: 16pc;
+    cursor: pointer;
+}
+
+:where(.css-dev-only-do-not-override-1rqnfsa).ant-card-small >.ant-card-head {
+    min-height: 3pc;
+    padding: 0 12px;
+    font-size: 14px;
+}
+.ant-modal-footer{
+    display: none;
+}
+.edit-btn{
+    height: 2.3pc;
+        font-size: 16px;
+    width:4pc;
+}
+.card-cancel {
+    height: 2.3pc;
+    margin-left: 5pc;
+    margin-top: -2.2pc;
+}
+.page {
+    margin: 1pc;
+    display: flex;
+    justify-content: center;
+}
+.edit-loading{
+    margin-left: -7px;
+}
