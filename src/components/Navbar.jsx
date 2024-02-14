@@ -2,37 +2,31 @@ import { useState, useEffect } from 'react';
 import '../components/Navbar.css';
 import { Button, Modal, Form, Input,InputNumber,Flex } from 'antd';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = ({ onTodoCreated }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false); 
     const baseURL = "https://jsonplaceholder.typicode.com/todos";
 
-    // const handleCreate = (values) => {
-    
-    //     axios.post(baseURL, { title: values.title, completed: false, id: values.Id, userId: 201 })
-    //       .then((res) => {
-    //         setTodos([...todos, res.data]);
-    //         setIsModalOpen(false);
-
-    //         // getData();
-    //        })
-    //       .catch((error) => {
-    //         console.error('Error creating todo', error);
-    //       });
-    //   };
+   
       const handleCreate = (values) => {
         axios
           .post(baseURL, { title: values.title, completed: false, id: values.ID, userId: 201 })
           .then((res) => {
             const newTodo = res.data;
-            
             setIsModalOpen(false);
             onTodoCreated(newTodo); // Pass the new todo to the parent component
             setIsLoading(false)
+            toast.success('Task is successfully added.');
           })
           .catch((error) => {
+            setIsLoading(false)
+
             console.error('Error creating todo', error);
+            toast.error('Error creating task')
+
           });
       };
   const showModal = () => {
@@ -48,12 +42,11 @@ const Navbar = ({ onTodoCreated }) => {
   const onChange = (value) => {
     console.log('changed', value);
   };
-  const onFinish = async (values) => {
+  const onFinish =  (values) => {
     // Set loading state to true when API call starts
     console.log(values)
     setIsLoading(true);
-    await handleCreate(values);
-     // Set loading state to false when API call is done
+     handleCreate(values);
    
 };
   return (
@@ -89,7 +82,7 @@ const Navbar = ({ onTodoCreated }) => {
             <Form.Item
               label="ID"
               name="ID"
-              rules={[{ required: true, message: 'Please enter the Id' }]}
+              
             >
               <InputNumber min={201}   onChange={onChange} />
             </Form.Item>
@@ -108,6 +101,18 @@ const Navbar = ({ onTodoCreated }) => {
             </Form.Item>
           </Form>
         </Modal>
+        <ToastContainer
+position="top-right"
+// autoClose={500}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss={false}
+draggable
+pauseOnHover={false}
+theme="light"
+/>
     </>
   )
 }

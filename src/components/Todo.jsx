@@ -1,22 +1,27 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Navbar from './Navbar';
-import '../components/Todo.css';
 import Cards from './card';
+
+
 const Todo = () => {
   const [todo, setTodo] = useState([]);
 
   const handleTodoCreated = (newTodo) => {
-    setTodo([...todo, newTodo]); // Add the new todo to the existing list
+    setTodo([...todo, newTodo]); 
   };
 
 
   return (
   <>
-  <Navbar onTodoCreated={handleTodoCreated}   />
+  <Navbar onTodoCreated={handleTodoCreated} />
   <Cards todoss={todo} />
   </>
-  );
-};
+  )
+}
 
-export default Todo;      
+export default Todo;
+
+
+
+
+  
