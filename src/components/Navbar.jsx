@@ -20,6 +20,8 @@ const Navbar = ({ onTodoCreated }) => {
             onTodoCreated(newTodo); // Pass the new todo to the parent component
             setIsLoading(false)
            
+            toast.success('Task is successfully added.');
+
           })
           .catch((error) => {
             setIsLoading(false)
@@ -102,6 +104,7 @@ const Navbar = ({ onTodoCreated }) => {
             </Form.Item>
           </Form>
         </Modal>
+        
         <ToastContainer
 position="top-right"
 // autoClose={500}

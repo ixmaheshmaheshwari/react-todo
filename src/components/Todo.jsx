@@ -10,23 +10,23 @@ const Todo = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
   };
-  
+
 
   const handleTodoCreated = (newTodo) => {
-    setTodo([...todo, newTodo]); 
+    setTodo([...todo, newTodo]);
   };
 
 
   return (
-  <>
-  <ConfigProvider theme={{theme}}>
-      <div style={{ padding: '20px' }}>
-        <Switch checkedChildren="Dark" unCheckedChildren="Light" onChange={toggleTheme} />
-      </div>
-  <Navbar onTodoCreated={handleTodoCreated} />
-  <Cards todoss={todo} />
-  </ConfigProvider>
-  </>
+    <>
+      <ConfigProvider theme={{ theme }}>
+        <div style={{ padding: '20px' }}>
+          <Switch checkedChildren="Dark" unCheckedChildren="Light" onChange={toggleTheme} />
+        </div>
+        <Navbar onTodoCreated={handleTodoCreated} />
+        <Cards todoss={todo} />
+      </ConfigProvider>
+    </>
   )
 }
 
@@ -35,4 +35,3 @@ export default Todo;
 
 
 
-  

@@ -35,7 +35,7 @@ const Cards = ({ todoss }) => {
   }, []);
   useEffect(() => {
     todoss.map((todo) => {
-      toast.success('Task is successfully added.');
+      // toast.success('Task is successfully added.');
       setTodos([...todos, todo]);
       console.log(todo)
     })
@@ -252,7 +252,7 @@ const Cards = ({ todoss }) => {
           </Form.Item>
         </Form>
       </Modal>
-      <ToastContainer
+      {/* <ToastContainer
         position="top-right"
         // autoClose={500}
         hideProgressBar={false}
@@ -264,7 +264,7 @@ const Cards = ({ todoss }) => {
         pauseOnHover={false}
         theme="light"
 
-      />
+      /> */}
     </>
   );
 };
