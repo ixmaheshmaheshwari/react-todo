@@ -35,6 +35,7 @@ const[loading,setLoading]=useState(false)
   }, []);
   useEffect(()=>{
     todoss.map((todo)=>{
+      toast.success('Task is successfully added.');
         setTodos([...todos, todo]);
         console.log(todo)
     })
@@ -114,6 +115,8 @@ const[loading,setLoading]=useState(false)
       })
 
       .catch((error) => {
+        setIsEditModalVisible(false);
+        setIsLoading(false);
         console.error('Error updating todo', error);
         toast.error('Error updating todo')
       });
@@ -123,7 +126,7 @@ const[loading,setLoading]=useState(false)
   const incompleteTodos = todos.filter(todo => !todo.completed);
   return (
     <>
-         
+      {loading?<Skeleton active></Skeleton>:   
       <Space loading direction="horizontal" size={16} wrap>
         {incompleteTodos.map((todo) => (
           <Card loading={loading}
@@ -151,10 +154,11 @@ const[loading,setLoading]=useState(false)
           </Card>
         ))}
       </Space>
+}
       <Space className="card" direction="horizontal" size={16} wrap style={{marginTop:20}}>
         {completedTodos.map((todo) => (
           <Card
-            
+          loading={loading}
             key={todo.id}
             size="small"
             title="Completed Task"

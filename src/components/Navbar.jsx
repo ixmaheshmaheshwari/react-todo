@@ -19,7 +19,7 @@ const Navbar = ({ onTodoCreated }) => {
             setIsModalOpen(false);
             onTodoCreated(newTodo); // Pass the new todo to the parent component
             setIsLoading(false)
-            toast.success('Task is successfully added.');
+           
           })
           .catch((error) => {
             setIsLoading(false)
