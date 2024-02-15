@@ -9,7 +9,7 @@ const Navbar = ({ onTodoCreated }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false); 
     const baseURL = "https://jsonplaceholder.typicode.com/todos";
-
+    
    
       const handleCreate = (values) => {
         axios
@@ -52,6 +52,7 @@ const Navbar = ({ onTodoCreated }) => {
   return (
 
     <>
+    
     <div className='header'>
         <div className='img'>
         <img src="../src/components/icons8-todo-list.gif"  className='image'></img>
@@ -113,6 +114,7 @@ draggable
 pauseOnHover={false}
 theme="light"
 />
+
     </>
   )
 }
