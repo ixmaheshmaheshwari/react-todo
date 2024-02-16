@@ -15,9 +15,7 @@ const Todo = () => {
   return (
     <>
       
-        <div style={{ padding: '20px' }}>
-          <Switch checkedChildren="Dark" unCheckedChildren="Light" onChange={toggleTheme} />
-        </div>
+       
         <Navbar onTodoCreated={handleTodoCreated} />
         <Cards todoss={todo} />
      
