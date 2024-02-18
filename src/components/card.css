@@ -1,8 +1,4 @@
-.ant-space-item {
-    margin-left: 10px;
-    background-color: antiquewhite;
-    border-radius: 19px;
-}
+
 .ant-btn-link:hover {
     border: none; /* Remove border on hover */
   }
@@ -12,20 +8,27 @@
  .ant-card-body{
     height: 8pc;
  }
- .title{
-    width:10rem
+ .light-text{
+    width:10rem ; 
+    color: black; 
  }
- .edit{
+
+ .dark-text{
+    width:10rem ; 
+    color: black; 
+ }
+ .edit {
     width: 10%;
     position: absolute;
-    margin-left: 16pc;
-    margin-top: 0pc;
+    margin-left: 12pc;
+    margin-top: -2.7pc;
     cursor: pointer;
- }
- .delete {
+}
+
+.delete {
     margin-left: -164px;
     /* position: absolute; */
-    margin-top: 2.5pc;
+    margin-top: -2.7pc;
     cursor: pointer;
     width: 10%;
     position: absolute;
@@ -59,4 +62,67 @@
 .edit-loading{
     margin-left: -7px;
     height: 2.3pc;
+}
+.dark{
+    background-color: #1e1e1e; /* Dark background color */
+  color: #ffffff; /* Light text color */
+  
+  
+
+}
+.title-dark{
+    background-color: #1e1e1e; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+.title-light{
+    color:#0a0a0ae4;
+    border-color: #ffffff;
+}
+:where(.css-dev-only-do-not-override-1xg9z9n).ant-space-align-center {
+    align-items: center;
+    margin-left: 19px;
+}
+.page-light {
+    margin: 1pc;
+    /* Add light theme pagination styles here */
+  }
+  
+  /* Dark theme styles */
+  .page-dark .page {
+    margin: 1pc !important;
+    background-color: #1e1e1e; /* Dark background color */
+    color: #ffffff; /* Light text color */
+
+  }
+  /* .page-dark .page  :where(.css-dev-only-do-not-override-1xg9z9n).ant-pagination .ant-pagination-item a {
+      display: block;
+      padding: 0 6px;
+      color: white;
+  }  */
+
+  .page-dark .ant-pagination-item a {
+    color: white; 
+    background-color: #ae9595;
+  } 
+
+  .page-dark .ant-pagination-item-link{
+    color: rgb(9, 8, 8); 
+    background-color: #ae9595 !important;
+  }
+  .dark  .ant-card-small {
+    border-color: #ffffff;
+  }
+  .ant-card.dark {
+
+    border-color: #d8b8b8 !important;
+  }
+  :where(.css-dev-only-do-not-override-1xg9z9n).ant-pagination {
+    box-sizing: border-box;
+    margin: 51px;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 14px;
+    line-height: 1.5714285714285714;
+    list-style: none;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
 }

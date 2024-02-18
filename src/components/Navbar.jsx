@@ -1,11 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import '../components/Navbar.css';
 import { Button, Modal, Form, Input,InputNumber,Flex } from 'antd';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ThemeContext } from './ThemeChanger';
+import logo from '../components/icons8-todo-list.gif'
 
 const Navbar = ({ onTodoCreated }) => {
+  const {toggle}=useContext(ThemeContext)
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false); 
     const baseURL = "https://jsonplaceholder.typicode.com/todos";
@@ -57,8 +61,8 @@ const Navbar = ({ onTodoCreated }) => {
     
     <div className='header'>
         <div className='img'>
-        <img src="../src/components/icons8-todo-list.gif"  className='image'></img>
-    <h2>To-Do Tasks</h2>
+        <img src={logo}  className='image'></img>
+    <h2 className={toggle}>To-Do Tasks</h2>
         </div>
 <div>
 <Button type="primary" onClick={showModal} >
@@ -73,7 +77,8 @@ const Navbar = ({ onTodoCreated }) => {
           open={isModalOpen}
           onCancel={handleCancel}
           footer={null}
-        >
+          className={`modal ${toggle === 'dark' ? 'dark' : ''}`}
+          >
           <Form onFinish={onFinish}>
             <Form.Item
               label="Title"
@@ -85,7 +90,7 @@ const Navbar = ({ onTodoCreated }) => {
             <Form.Item
               label="ID"
               name="ID"
-              
+              rules={[{ required: true, message: 'Please enter the title' }]}
             >
               <InputNumber min={201}   onChange={onChange} />
             </Form.Item>

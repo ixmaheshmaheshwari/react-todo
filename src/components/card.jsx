@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Card, Button, Input, Pagination, Space, Modal, Form, Switch, Skeleton } from 'antd';
 import '../components/card.css';
 import { FaRegEdit } from 'react-icons/fa';
@@ -8,8 +8,10 @@ import ReactPaginate from 'react-paginate';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const Cards = ({ todoss }) => {
+import { ThemeContext } from './ThemeChanger';
 
+const Cards = ({ todoss }) => {
+const {toggle}=useContext(ThemeContext)
   const [isEditModalVisible, setIsEditModalVisible] = useState(false);
   const [todos, setTodos] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,7 +22,7 @@ const Cards = ({ todoss }) => {
   const [selectedTodo, setSelectedTodo] = useState(null);
   const [form] = Form.useForm();
   const baseURL = "https://jsonplaceholder.typicode.com/todos";
-
+console.log(toggle)
   useEffect(() => {
     axios.get(`${baseURL}`)
       .then((res) => {
@@ -129,25 +131,29 @@ const Cards = ({ todoss }) => {
   const incompleteTodos = todos.filter(todo => !todo.completed);
   return (
     <>
-      {loading ? <Skeleton active style={{
+      {loading ? <Skeleton active className={toggle} style={{
         height: 10,
         width: 298,
         marginLeft: 20
+        
       }} > </Skeleton>
         :
         <Space loading direction="horizontal" size={16} wrap>
           {incompleteTodos.map((todo) => (
             <Card loading={loading}
               key={todo.id}
+              title={<span style={{ color: '#ff0000' }}>Incompleted Task</span>}
               size="small"
-              title="Incomplete Task"
               style={{
                 width: 300,
-                borderColor: 'black'
+                borderColor: 'black',
               }}
+            
+              className={toggle}
             >
+              
               <div id="card-body">
-                <p className="title">{todo.title}</p>
+              <p className={toggle}>{todo.title}</p>
                 <FaRegEdit
                   style={{ fontSize: '24px' }}
                   className="edit"
@@ -175,15 +181,16 @@ const Cards = ({ todoss }) => {
               loading={loading}
               key={todo.id}
               size="small"
-              title="Completed Task"
+              title={<span className={`title-${toggle}`} >Completed Task</span>}
               style={{
-                width: 300,
+                width: 326,
                 marginLeft: 10,
                 borderColor: 'black'
               }}
+              className={toggle}
             >
               <div id="card-body">
-                <p className="title">{todo.title}</p>
+              <p className={toggle }>{todo.title}</p>
                 <FaRegEdit
                   style={{ fontSize: '24px' }}
                   className="edit"
@@ -200,7 +207,7 @@ const Cards = ({ todoss }) => {
         </Space>
       }
       <Pagination
-        className='page'
+        className={`page-${toggle}`}
         current={currentPage}
         pageSize={todosPerPage}
         total={200} // Set total to totalPages
@@ -218,6 +225,7 @@ const Cards = ({ todoss }) => {
         open={isEditModalVisible}
         onOk={handleEditOk}
         onCancel={handleEditCancel}
+        className={toggle}
       >
         <Form
           form={form}

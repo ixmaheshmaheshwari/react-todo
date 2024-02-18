@@ -1,7 +1,7 @@
 
 
 .header {
-    height: 12pc;
+    height: 7pc;
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -58,5 +58,34 @@
     margin: 0;
   }
 
+  .dark{
+    background-color: #1e1e1e; /* Dark background color */
+  color: #ffffff; /* Light text color */
 
+}
+
+  /* Dark theme styles for modal */
+.modal.ant-modal {
+    background-color: #1e1e1e; /* Dark background color */
+    color: #ffffff; /* Light text color */
+    border-color: #ffffff; /* White border color */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* White shadow */
+  }
+  
+  .modal.ant-modal-header {
+    background-color: #333333; /* Darker background color for header */
+  }
+  
+  .modal.ant-modal-footer {
+    background-color: #333333; /* Darker background color for footer */
+  }
+  
+  .modal.ant-modal-close-x {
+    color: #ffffff; /* Light text color for close button */
+  }
+  
+  /* Additional styles for overlay/backdrop */
+  .modal.ant-modal-mask {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  }
   
