@@ -120,7 +120,7 @@ rtl={false}
 pauseOnFocusLoss={false}
 draggable
 pauseOnHover={false}
-theme="light"
+theme={toggle}
 />
 
     </>
