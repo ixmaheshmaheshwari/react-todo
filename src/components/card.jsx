@@ -76,6 +76,7 @@ const Cards = ({ todoss }) => {
   const handleEditCancel = () => {
     setIsEditModalVisible(false);
     setIsLoading(false);
+    setLoading(false)
   };
   const onFinish = (values, completed) => {
     setIsLoading(true);
@@ -118,6 +119,8 @@ const Cards = ({ todoss }) => {
         // getData();
         toast.success("Task is successfully deleted");
         setLoading(false);
+        setError(null)
+
       })
       .catch((error) => {
         setError(null)
@@ -139,6 +142,7 @@ const Cards = ({ todoss }) => {
         setIsEditModalVisible(false);
         setIsLoading(false);
         setLoading(false);
+        setError(null)
 
         toast.success("Task is successfully edited");
       })
@@ -146,7 +150,9 @@ const Cards = ({ todoss }) => {
       .catch((error) => {
         setIsEditModalVisible(false);
         setIsLoading(false);
+        setLoading(false)
         setError(null)
+
         console.error("Error updating todo", error);
         toast.error("Error updating todo");
         setError("Error updating todo. Please try again later."); // Set error message
@@ -216,6 +222,7 @@ const Cards = ({ todoss }) => {
           {" "}
         </Skeleton>
       ) : (
+        <>
         <Space
           className="card"
           direction="horizontal"
@@ -254,9 +261,11 @@ const Cards = ({ todoss }) => {
               </div>
             </Card>
           ))}
-           {error && <div>Error: {error}</div>}
+          
 
         </Space>
+         {error && <div style={{ textAlign: 'center', color: 'red',margin:11 }}>Error: {error}</div>}
+         </>
       )}
       <Pagination
         className={`page-${toggle}`}
