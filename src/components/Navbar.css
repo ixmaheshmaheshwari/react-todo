@@ -1,30 +1,28 @@
-
-
 .header {
-    height: 7pc;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    justify-content: space-between;
+  height: 7pc;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 :where(.css-dev-only-do-not-override-1rqnfsa).ant-btn.ant-btn-loading {
-    opacity: 0.65;
-    cursor: default;
-    height: 2.5pc;
-    font-size: 16px;
-    width: 5pc;
+  opacity: 0.65;
+  cursor: default;
+  height: 2.5pc;
+  font-size: 16px;
+  width: 5pc;
 }
 .image {
-    height: 3pc;
-    width: 3pc;
-    margin-right: 20px;
+  height: 3pc;
+  width: 3pc;
+  margin-right: 20px;
 }
 
 .img {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 /*
 .image{
@@ -32,60 +30,39 @@
 } 
 */
 .ant-btn {
-    display: flex;
-    margin-right: 1pc;
-    height: 4pc;
-    align-items: center;
-    font-size: 16px;
-    margin-right: 12pc;
-    justify-content: center;
-
+  display: flex;
+  margin-right: 1pc;
+  height: 4pc;
+  align-items: center;
+  font-size: 16px;
+  margin-right: 12pc;
+  justify-content: center;
 }
-.add{
-    height: 2.5pc;
-        font-size: 16px;
-    width:4pc;
+.add {
+  height: 2.5pc;
+  font-size: 16px;
+  width: 4pc;
 }
 .cancel {
-    height: 2.5pc;
-    margin-left: -11pc;
+  height: 2.5pc;
+  margin-left: -11pc;
 }
-  
-  
-  h2 {
-    font-size: 24px;
-    color: #333;
-    margin: 0;
-  }
 
-  .dark{
-    background-color: #1e1e1e; /* Dark background color */
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.dark {
+  background-color: #1e1e1e; /* Dark background color */
   color: #ffffff; /* Light text color */
-
 }
 
-  /* Dark theme styles for modal */
-.modal.ant-modal {
-    background-color: #1e1e1e; /* Dark background color */
-    color: #ffffff; /* Light text color */
-    border-color: #ffffff; /* White border color */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* White shadow */
-  }
-  
-  .modal.ant-modal-header {
-    background-color: #333333; /* Darker background color for header */
-  }
-  
-  .modal.ant-modal-footer {
-    background-color: #333333; /* Darker background color for footer */
-  }
-  
-  .modal.ant-modal-close-x {
-    color: #ffffff; /* Light text color for close button */
-  }
-  
-  /* Additional styles for overlay/backdrop */
-  .modal.ant-modal-mask {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-  }
-  
+.modaldark .ant-modal-content,
+.modaldark .ant-modal-header,
+.modaldark .ant-modal-title,
+.modaldark .ant-form-item-required {
+  background-color: #1e1e1e;
+  color: #ffffff !important;
+}
